@@ -53,10 +53,25 @@ jobs:
           path: staging
 
 
-      - name: Upload to Google Play
-        uses: r0adkll/upload-google-play@v1.0.15
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          serviceAccountJsonPlainText: ${{ secrets.GLUON_ANDROID_SERVICE_ACCOUNT_JSON }}
-          packageName: com.gluonhq.samples.hellogluon
-          releaseFiles: target/gluonfx/aarch64-android/gvm/HelloGluon.aab
-          track: beta
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: TODO New Release.
+          draft: false
+          prerelease: false
+        
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: target/gluonfx/aarch64-android/gvm/HelloGluon.apk
+          asset_name: HelloGluon.zip
+          asset_content_type: application/zip
+    
