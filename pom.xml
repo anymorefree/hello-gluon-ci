@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.gluonhq.samples</groupId>
@@ -37,6 +38,11 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
+            <version>${javafx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
             <version>${javafx.version}</version>
         </dependency>
         <dependency>
@@ -81,7 +87,7 @@
             <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
         </repository>
     </repositories>
-    
+
     <pluginRepositories>
         <pluginRepository>
             <id>snapshot</id>
@@ -119,6 +125,14 @@
                         <list>statusbar</list>
                         <list>storage</list>
                     </attachList>
+                    <bundlesList>
+                        <list>com.gluonhq.hello.views.primary</list>
+                        <list>com.gluonhq.hello.views.secondary</list>
+                    </bundlesList>
+                    <reflectionList>
+                        <list>com.gluonhq.hello.views.PrimaryPresenter</list>
+                        <list>com.gluonhq.hello.views.SecondaryPresenter</list>
+                    </reflectionList>
                     <mainClass>${main.class}</mainClass>
                     <appIdentifier>${app.identifier}</appIdentifier>
                     <releaseConfiguration>
