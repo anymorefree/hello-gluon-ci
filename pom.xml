@@ -19,7 +19,7 @@
         <connect.version>2.0.1</connect.version>
         <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>
         <gluonfx.maven.plugin.version>1.0.14</gluonfx.maven.plugin.version>
-        <main.class>com.gluonhq.hello.HelloGluonApp</main.class>
+        <main.class>com.gluonhq.hello.App</main.class>
         <app.identifier>${main.class}</app.identifier>
         <app.description>The HelloGluon app</app.description>
         <package.type/>
@@ -200,7 +200,7 @@
             <id>android</id>
             <properties>
                 <gluonfx.target>android</gluonfx.target>
-                <app.identifier>com.gluonhq.samples.hellogluon</app.identifier>
+                <app.identifier>com.gluonhq.hello.App</app.identifier>
                 <version.code>${env.GITHUB_RUN_NUMBER}</version.code>
                 <provided.keystore.path>${env.GLUON_ANDROID_KEYSTOREPATH}</provided.keystore.path>
                 <provided.keystore.password>${env.GLUON_ANDROID_KEYSTORE_PASSWORD}</provided.keystore.password>
