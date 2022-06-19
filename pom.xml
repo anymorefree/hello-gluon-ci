@@ -66,6 +66,11 @@
             <version>${attach.version}</version>
         </dependency>
         <dependency>
+            <groupId>com.gluonhq</groupId>
+            <artifactId>glisten-afterburner</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+        <dependency>
             <groupId>com.gluonhq.attach</groupId>
             <artifactId>storage</artifactId>
             <version>${attach.version}</version>

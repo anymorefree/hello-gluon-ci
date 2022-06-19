@@ -1,6 +1,5 @@
 package com.gluonhq.hello.views;
 
-import com.gluonapplication.GluonApplication;
 import com.gluonhq.charm.glisten.afterburner.AppView;
 import com.gluonhq.charm.glisten.afterburner.AppViewRegistry;
 import com.gluonhq.charm.glisten.afterburner.Utils;
@@ -8,6 +7,7 @@ import com.gluonhq.charm.glisten.application.AppManager;
 import com.gluonhq.charm.glisten.control.Avatar;
 import com.gluonhq.charm.glisten.control.NavigationDrawer;
 import com.gluonhq.charm.glisten.visual.MaterialDesignIcon;
+import com.gluonhq.hello.HelloGluonApp;
 import javafx.scene.image.Image;
 
 import java.util.Locale;
@@ -35,7 +35,7 @@ public class AppViewManager {
 
         NavigationDrawer.Header header = new NavigationDrawer.Header("Gluon Application",
                 "Multi View Project",
-                new Avatar(21, new Image(GluonApplication.class.getResourceAsStream("/icon.png"))));
+                new Avatar(21, new Image(HelloGluonApp.class.getResourceAsStream("/icon.png"))));
 
         Utils.buildDrawer(AppManager.getInstance().getDrawer(), header, REGISTRY.getViews()); 
     }
