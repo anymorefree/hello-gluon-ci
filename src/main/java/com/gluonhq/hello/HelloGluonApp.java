@@ -54,7 +54,7 @@ public class HelloGluonApp extends Application {
         scene.getStylesheets().add(HelloGluonApp.class.getResource("style.css").toExternalForm());
         ((Stage) scene.getWindow()).getIcons().add(new Image(HelloGluonApp.class.getResourceAsStream("/icon.png")));
     }
-    public static void main(String[] args) {
-        launch();
-    }
+//    public static void main(String[] args) {
+//        launch();
+//    }
 }
